@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hasil Input</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .data-box { background: #f8f9fa; padding: 15px; border-radius: 4px; margin: 20px 0; }
+        .no-data { color: #dc3545; font-style: italic; }
+        .back { margin-top: 20px; }
+        .back a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+<h2>Detail Data Terinput</h2>
+
+<div class="data-box">
+    <div th:if="${nama != null}">
+        <p><strong>Nama Lengkap:</strong> <span th:text="${nama}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${email}"></span></p>
+    </div>
+
+    <div th:if="${nama == null}" class="no-data">
+        <p>Belum ada data yang diinputkan!</p>
+    </div>
+</div>
+
+<div class="back">
+    <a th:href="@{/home}">← Kembali ke Home</a>
+</div>
+</body>
+</html>
